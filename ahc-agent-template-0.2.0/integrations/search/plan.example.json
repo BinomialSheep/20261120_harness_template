@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "search_id": "example-search-001",
+  "work_id": "replace-with-beads-work-id",
+  "root_artifact_id": "0000000000000000000000000000000000000000000000000000000000000000",
+  "selector": {"name": "greedy"},
+  "actions": [
+    {"name": "local-refine", "definition": "限定した局所変更。既存の不変条件を保持して回帰テストする", "generator_config_sha256": "1111111111111111111111111111111111111111111111111111111111111111"},
+    {"name": "independent-design", "definition": "根本構造を別の方向で再設計し、具体的な判別実験を作る", "generator_config_sha256": "2222222222222222222222222222222222222222222222222222222222222222"}
+  ],
+  "evaluation": {"suite": "suites/REPLACE_WITH_REAL_DEV_SUITE.json", "suite_sha256": "3333333333333333333333333333333333333333333333333333333333333333", "baseline_artifact_id": "4444444444444444444444444444444444444444444444444444444444444444", "reward": {"kind": "logistic", "tau": 0.05}},
+  "limits": {"max_trials": 12, "max_pending": 1}
+}

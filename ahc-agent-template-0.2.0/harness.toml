@@ -1,0 +1,19 @@
+schema_version = 1
+# No project identity, credential, task ID, mission or result belongs in the distributed template.
+[build]
+compiler = "g++"
+timeout_s = 90
+[build.profiles.release]
+flags = ["-std=c++23", "-O2", "-Wall", "-Wextra"]
+[build.profiles.debug]
+flags = ["-std=c++23", "-O1", "-g", "-fsanitize=address,undefined", "-fno-omit-frame-pointer"]
+[build.profiles.cpp23]
+flags = ["-std=c++23", "-O2", "-Wall", "-Wextra"]
+[resources]
+max_jobs = 8
+max_trials = 10000
+max_log_bytes = 1048576
+[beads]
+recommended_version = "1.3.1"
+source_repository = "gastownhall/beads"
+# The manager verifies installed CLI behavior before use. No hooks or automatic remote sync.

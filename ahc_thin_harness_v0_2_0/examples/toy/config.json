@@ -1,0 +1,12 @@
+{
+  "schema_version": 2,
+  "problem": {"dir": "problem", "statement": "problem/statement.md"},
+  "solver": {"filename": "main.cpp", "build": ["g++", "-std=gnu++20", "-O2", "{source}", "-o", "{binary}"]},
+  "judge": {"command": ["{python}", "{problem}/score_case.py", "--binary", "{binary}", "--seed", "{seed}", "--result", "{result}"],
+            "timeout_sec": 10, "direction": "maximize", "metric": "paired_difference"},
+  "evaluation": {"first_seed": 1000, "block": 200, "stages": [20, 60], "confirm": 60, "drop_z": 3.0, "keep_top": 1,
+                 "parallelism": 2},
+  "workers": {"parallelism": 4, "workspace_root": "../{repo}.workers", "default_engine": "demo",
+              "engines": {"demo": ["{python}", "{workspace}/fake_agent.py"]}},
+  "report": {"feature": "K", "feature_name": "選ぶ個数"}
+}

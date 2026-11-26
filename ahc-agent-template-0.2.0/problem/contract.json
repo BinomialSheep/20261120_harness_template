@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "verified": false,
+  "evidence": [],
+  "mode": "batch",
+  "files": ["problem/judge_adapter.py"],
+  "limits": {"solver_wall_s": 2.0, "judge_wall_s": 10.0, "tester_wall_s": 30.0,
+             "solver_memory_mb": null, "solver_cpu_s": null, "max_output_bytes": 16777216,
+             "max_stderr_bytes": 1048576},
+  "judge_command": ["{python}", "{oracle}/problem/judge_adapter.py", "{input}", "{output}", "{result}"],
+  "seed_control": {"method": "unknown", "verified": false},
+  "contest_score": {"reproducible": false, "reason": "Determine from the supplied statement"}
+}

@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+config.json
+runs/
+best/
+artifacts/
+problem/tools/target/
+problem/tools/*.exe
+problem/tools/__pycache__/
+.thin.lock

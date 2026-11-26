@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "template_version": "0.2.0",
+  "created_utc": "2026-10-30",
+  "base_template": "ahc_agent_harness_template_v0.1.0.zip",
+  "base_zip_sha256": "c1264746ef9d143fb7f50e675db55c88f51b57c2de83bc65d32195dd22c41f59",
+  "loCM_reference_commit": "1183716b6f70fd0f6d52a25b49aa35c2551776f1",
+  "runtime_dependencies": [
+    "python>=3.11",
+    "git",
+    "g++ with C++23 support"
+  ],
+  "optional_dependencies": {
+    "treequest": "0.3.3",
+    "beads": "1.3.1 / version behavior verified in installed environment"
+  },
+  "contest_scope": "long AHC, With AI division; no regulation conditionals embedded",
+  "atcoder_service_api_included": false,
+  "automatic_submission": false,
+  "automatic_llm_routing": false
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "deadline_utc": "REPLACE_WITH_ACTUAL_CONTEST_DEADLINE",
+  "finish_reserve_s": 3600,
+  "remaining_research_s": 10800,
+  "oracle_verified": false,
+  "baseline_valid": false,
+  "evaluation_calibrated": false,
+  "critical_measurement_issue": false,
+  "stagnant_trials": 0,
+  "evidence_refs": []
+}

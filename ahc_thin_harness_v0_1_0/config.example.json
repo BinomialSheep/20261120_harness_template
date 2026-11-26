@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "problem": {
+    "statement": "problem/statement.md",
+    "tools": "problem/tools"
+  },
+  "solver": {
+    "filename": "main.cpp",
+    "build": ["g++", "-std=c++23", "-O2", "-DNDEBUG", "{source}", "-o", "{binary}"]
+  },
+  "judge": {
+    "command": ["{python}", "{tools}/score_case.py", "--binary", "{binary}", "--seed", "{seed}", "--result", "{result}"],
+    "timeout_sec": 4,
+    "direction": "maximize",
+    "metric": "paired_difference"
+  },
+  "evaluation": {
+    "count": 1000,
+    "first_seed": 1000,
+    "parallelism": 2,
+    "early_stop_on_invalid": true,
+    "promotion_margin": 0.0
+  },
+  "workers": {
+    "parallelism_A": 10,
+    "minutes_A": 20,
+    "minutes_B": 120,
+    "debug_seeds_A": [0],
+    "debug_seeds_B": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+    "engines": {
+      "codex": ["codex", "exec", "--sandbox", "workspace-write", "--cd", "{workspace}", "-"],
+      "claude": ["claude", "-p", "--permission-mode", "acceptEdits", "--no-session-persistence"],
+      "demo": ["{python}", "{workspace}/fake_agent.py"]
+    }
+  }
+}

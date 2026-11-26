@@ -1,0 +1,10 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {"label":"AHC: doctor","type":"shell","command":"python3 -m harness doctor","problemMatcher":[]},
+    {"label":"AHC: tests","type":"shell","command":"python3 tools/test.py --strict --record","problemMatcher":[]},
+    {"label":"AHC: demo (synthetic)","type":"shell","command":"python3 tools/demo.py","problemMatcher":[]},
+    {"label":"AHC: status","type":"shell","command":"python3 -m harness status","problemMatcher":[]},
+    {"label":"AHC: docs check","type":"shell","command":"python3 tools/check_docs.py","problemMatcher":[]}
+  ]
+}

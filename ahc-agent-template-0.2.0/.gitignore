@@ -1,0 +1,29 @@
+__pycache__/
+*.py[cod]
+.venv/
+.cache/
+work/
+dist/
+project.local.json
+.env
+*.token
+*.credentials.json
+*.class
+a.out
+# Track only reviewed Beads configuration, never local database or backup content.
+.beads/*
+!.beads/config.yaml
+!.beads/.gitignore
+!.beads/README.md
+# project metadata is machine-sensitive; document/recreate with native tooling when appropriate
+human/local/
+human/notes/*
+!human/notes/README.md
+!human/notes/*.example.md
+reports/local-tests.json
+
+# Human-supplied statements/tools are preserved locally; version their reviewed manifests.
+problem/incoming/*
+!problem/incoming/README.md
+problem/supplied_rules/*
+!problem/supplied_rules/README.md

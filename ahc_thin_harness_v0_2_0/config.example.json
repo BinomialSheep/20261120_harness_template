@@ -1,0 +1,74 @@
+{
+  "schema_version": 2,
+  "problem": {"dir": "problem", "statement": "problem/statement.md"},
+  "solver": {
+    "filename": "main.cpp",
+    "build": ["g++", "-std=gnu++23", "-O2", "-march=native", "-DATCODER", "-DONLINE_JUDGE",
+              "-ftrivial-auto-var-init=zero", "{source}", "-o", "{binary}"]
+  },
+  "judge": {
+    "command": ["{python}", "{problem}/score_case.py", "--binary", "{binary}", "--seed", "{seed}", "--result", "{result}",
+                "--mode", "batch", "--time-limit", "2.0", "--features", "N,M"],
+    "timeout_sec": 10,
+    "direction": "maximize",
+    "metric": "paired_difference"
+  },
+  "evaluation": {
+    "first_seed": 1000,
+    "block": 3000,
+    "stages": [100, 300, 1000],
+    "drop_z": 3.0,
+    "keep_top": 3,
+    "confirm": 1000,
+    "skip_confirm_z": 6.0,
+    "parallelism": 0,
+    "promotion_margin": 0.0,
+    "tle_retries": 2
+  },
+  "workers": {
+    "parallelism": 10,
+    "minutes": {"A": 20, "B": 120, "C": 60},
+    "debug_seeds": {"A": [0], "B": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], "C": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]},
+    "tuning": {"seed_start": 1000000, "seed_count": 50000, "parallelism": 0, "modes": ["B", "C"]},
+    "workspace_root": "../{repo}.workers",
+    "default_engine": "codex",
+    "engines": {
+      "codex": {
+        "bin": ["codex"], "min_version": "0.169.0",
+        "argv": ["codex", "exec", "--ignore-user-config", "-m", "gpt-6.2-sol", "-c", "model_reasoning_effort=\"high\"",
+                 "-c", "web_search=\"disabled\"", "--disable", "apps", "--disable", "plugins", "--disable", "remote_plugin",
+                 "--disable", "browser_use", "--disable", "browser_use_external", "--disable", "in_app_browser",
+                 "--disable", "multi_agent", "--disable", "memories", "--sandbox", "workspace-write", "--json",
+                 "--cd", "{workspace}", "-"]
+      },
+      "codex_xhigh": {
+        "bin": ["codex"], "min_version": "0.169.0",
+        "argv": ["codex", "exec", "--ignore-user-config", "-m", "gpt-6.2-sol", "-c", "model_reasoning_effort=\"xhigh\"",
+                 "-c", "web_search=\"disabled\"", "--disable", "apps", "--disable", "plugins", "--disable", "remote_plugin",
+                 "--disable", "browser_use", "--disable", "browser_use_external", "--disable", "in_app_browser",
+                 "--disable", "multi_agent", "--disable", "memories", "--sandbox", "workspace-write", "--json",
+                 "--cd", "{workspace}", "-"]
+      },
+      "claude": {
+        "bin": ["claude", "~/.vscode-server/extensions/anthropic.claude-code-*-linux-x64/resources/native-binary/claude",
+                "~/.vscode/extensions/anthropic.claude-code-*/resources/native-binary/claude"],
+        "min_version": "2.1.280",
+        "argv": ["claude", "-p", "--model", "claude-opus-5-5", "--effort", "high", "--safe-mode", "--no-session-persistence",
+                 "--output-format", "stream-json", "--verbose", "--permission-mode", "acceptEdits", "--permission-prompts", "none",
+                 "--tools", "Bash,Read,Edit,Write,Glob,Grep", "--disallowedTools", "WebSearch", "WebFetch",
+                 "--allowedTools", "Bash(python3 quickcheck.py)", "Bash(python3 quickcheck.py *)", "Bash(g++ *)"]
+      },
+      "claude_deep": {
+        "bin": ["claude", "~/.vscode-server/extensions/anthropic.claude-code-*-linux-x64/resources/native-binary/claude",
+                "~/.vscode/extensions/anthropic.claude-code-*/resources/native-binary/claude"],
+        "min_version": "2.1.280",
+        "argv": ["claude", "-p", "--model", "claude-opus-5-5", "--effort", "high", "--safe-mode", "--no-session-persistence",
+                 "--output-format", "stream-json", "--verbose", "--permission-mode", "acceptEdits", "--permission-prompts", "none",
+                 "--tools", "Bash,Read,Edit,Write,Glob,Grep", "--disallowedTools", "WebSearch", "WebFetch",
+                 "--allowedTools", "Bash(python3 quickcheck.py)", "Bash(python3 quickcheck.py *)", "Bash(python3 batchcheck.py *)",
+                 "Bash(g++ *)", "Bash(python3 *)", "Bash(./*)", "Bash(timeout *)"]
+      }
+    }
+  },
+  "report": {"feature": null, "feature_name": null, "bands": null}
+}

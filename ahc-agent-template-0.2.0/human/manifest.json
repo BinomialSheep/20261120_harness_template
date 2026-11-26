@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "template_version": "0.2.0",
+  "files": [
+    "human/README.md",
+    "human/guides/START_HERE.md",
+    "human/guides/HARNESS_OVERVIEW.md",
+    "human/guides/PROBLEM_ONBOARDING.md",
+    "human/guides/AHC_EVALUATION.md",
+    "human/guides/CASE_MANAGEMENT.md",
+    "human/guides/RESEARCH_WORKFLOW.md",
+    "human/guides/OPTIMIZATION_WORKFLOW.md",
+    "human/guides/PARALLEL_SESSIONS.md",
+    "human/guides/BUDGET_AND_PERMISSIONS.md",
+    "human/guides/BACKUP_AND_RECOVERY.md",
+    "human/guides/TROUBLESHOOTING.md",
+    "human/questions/README.md",
+    "human/questions/parallel-budget.example.md",
+    "human/notes/README.md",
+    "human/notes/inbox.example.md",
+    "human/guides/NEW_IN_V020.md",
+    "human/guides/HOLDOUT_AND_PRECISION.md",
+    "human/guides/SEARCH_WORKFLOW.md",
+    "human/guides/DEADLINE_POLICY.md",
+    "human/guides/MODEL_SELECTION.md"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "goal": "実問題の合法性を保ちながら未知入力での品質を改善する（例。ユーザー依頼に合わせる）",
+  "scope": [
+    "ローカル実装",
+    "ケース生成",
+    "対応評価",
+    "原因分析"
+  ],
+  "stop_conditions": [
+    "合意した資源/期限に到達",
+    "目的達成",
+    "ユーザーが停止"
+  ],
+  "mode": "bounded_campaign",
+  "permissions": {
+    "local_code": true,
+    "local_commit": true,
+    "local_adopt": true,
+    "evaluation": true,
+    "case_generation": true,
+    "rescore": true,
+    "training": false
+  },
+  "limits": {
+    "solver_runs": 1000,
+    "generated_cases": 100,
+    "judge_runs": 100
+  },
+  "deadline": null
+}

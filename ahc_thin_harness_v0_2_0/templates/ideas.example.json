@@ -1,0 +1,10 @@
+{
+  "_comment": "形の例。common は全案に共通の前提（親の説明など）を1回だけ書く。title は40字以内。engine は省略すると config の default_engine。",
+  "common": "親 parent_1.cpp は、解を『操作の列』で表し、焼きなましで改善するソルバーである。内部の時間予算は約1.95秒。",
+  "ideas": [
+    {"title": "初期解を別の構築法にする", "kind": "new", "idea": "問題の制約構造を直接使う、既存とは別の初期構築法を作る。……", "parents": []},
+    {"title": "近傍に区間の作り直しを足す", "kind": "continue", "idea": "親の近傍に、連続する数手をまとめて作り直す近傍を加える。……", "parents": ["best"]},
+    {"title": "R0003/A02 の初期解を best に載せる", "kind": "combine", "idea": "parent_2 で加わった初期解の作り方を parent_1 に移植する。……",
+     "parents": ["best", "R0003/A02"], "engine": "codex_xhigh"}
+  ]
+}

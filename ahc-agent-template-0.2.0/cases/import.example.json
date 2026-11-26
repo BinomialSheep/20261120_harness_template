@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "name": "replace-with-real-inputs",
+  "cases": [
+    {
+      "id": "sample-0000",
+      "path": "problem/incoming/in/0000.txt",
+      "block": "sample-0000",
+      "seed": 0,
+      "tags": {
+        "kind": "sample"
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+# ahc thin harness
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.thin.lock
+.build/
+report/
+problem/bin/
+problem/tools/target/
+human/private/
+runs/*/problem/
+runs/*/evaluation/*/solver
+runs/*/evaluation/*/case-*/
+runs/*/evaluation.old-*/
+runs/*/jobs/*/agent.stdout
+runs/*/jobs/*/agent.stderr
+runs/*/jobs/*/codex_rollout.jsonl
+runs/*/jobs/*/launch.lock
+runs/*/go.log
+runs/report/bin/
+runs/doctor/
